@@ -73,7 +73,8 @@ section .data
 ; Variables for reserve memory
 ; -----
 section .bss
-    buffer resb BUFF_SIZE
+    buffer resb BUFF_SIZE 
+    ; reserve memory for buffer
     
 
 
@@ -391,6 +392,7 @@ swapLoop:
     ; Check if end of message
     cmp rax, rsi
     jge swapEnd
+    ;jge means jump if greater or equal
 
     ; Get the character
     mov rbx, 0
@@ -402,6 +404,7 @@ swapLoop:
     ; Check if it is last character
     cmp rax, rsi
     jge swapEnd
+    ;jge means jump if greater or equal
 
     ; Decrease the counter
     dec rax
